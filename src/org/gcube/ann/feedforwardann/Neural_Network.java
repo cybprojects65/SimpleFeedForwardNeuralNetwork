@@ -454,6 +454,11 @@ public class Neural_Network implements Serializable {
 	}
 
 	public double getNormalValue(double numb, int i) {
+		if ((maxinputs[i] - mininputs[i])==0) {
+			System.out.println("Feature "+i+" is uninformative"); 
+			return 10E-7;
+		}
+			
 		return (double) (numb - mininputs[i]) / (maxinputs[i] - mininputs[i]);
 	}
 
